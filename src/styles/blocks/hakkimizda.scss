@@ -1,0 +1,31 @@
+.hakkımızda {
+  overflow-x: hidden;
+  text-align: left;
+
+  &__section-title {
+    margin-bottom: 15px;
+  }
+
+  &__section-about {
+    margin-bottom: 28px;
+  }
+
+  &__swiper {
+    margin-bottom: 40px;
+  }
+
+  &__swiper-slide {
+    max-width: 210px;
+  }
+
+  &__dessert-pic {
+    @include figure(80px);
+
+    margin-bottom: 45px;
+  }
+
+  &__dessert-about {
+    font-weight: 700;
+    color: $page-dark-blue-color;
+  }
+}

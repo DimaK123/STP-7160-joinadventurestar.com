@@ -1,0 +1,21 @@
+@import 'node_modules/normalize.css/normalize';
+@import './reset';
+
+@import './utils/variables';
+@import './utils/mixins';
+
+
+@import './blocks/page';
+@import './blocks/header';
+@import './blocks/wrapper';
+@import './blocks/nav';
+@import './blocks/action-button';
+@import './blocks/menu';
+@import './blocks/section-title';
+@import './blocks/section-about';
+@import './blocks/hakkimizda';
+@import './blocks/siparişler-ve-etkinlikler';
+@import './blocks/sıcak-ortamımız';
+@import './blocks/müşteri-yorumları';
+@import './blocks/iletişim';
+@import './blocks/footer';

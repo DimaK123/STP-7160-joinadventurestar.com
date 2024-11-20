@@ -1,0 +1,11 @@
+.section-about {
+  line-height: 22px;
+
+  color: $page-dark-blue-color;
+
+  &--pink-hover {
+    &:hover {
+      color: $page-pink-color;
+    }
+  }
+}
