@@ -1,0 +1,63 @@
+.siparişler-ve-etkinlikler {
+  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('../../images/siparişler-bg.avif');
+  background-size: 260%;
+  background-position-x: 50%;
+  // background-position-y: 100%;
+  background-repeat: no-repeat;
+
+  &__inner {
+    padding: 28px 7px;
+  }
+
+  &__section-title {
+    line-height: 32px;
+
+    margin-bottom: 30px;  
+  }
+
+  &__siparişler {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    text-align: start;
+    color: $page-gray-color;
+
+    > *:not(:last-child) {
+      min-height: 230px;
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-template-rows: max-content;
+    flex-direction: column;
+
+    &-title {
+      font-style: 24px;
+      font-weight: 700;
+
+      margin-bottom: 10px;
+    }
+
+    &-about {
+      font-size: 16px;
+      line-height: 24px;
+
+      align-self: end;
+    }
+  }
+
+  &__section-about {
+    padding-inline: 13px;
+
+    margin-bottom: 20px;
+  }
+
+  &__dessert-pic {
+    margin-bottom: 24px;
+
+    width: 67px;
+    height: 70px;
+  }
+}

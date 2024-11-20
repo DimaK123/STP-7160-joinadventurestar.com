@@ -1,0 +1,36 @@
+.page {
+  font-family: "Edu AU VIC WA NT Hand", 'cursive';
+  font-size: 20px;
+  line-height: 28px;
+
+  text-align: center;
+
+  background-color: #FDF9EB;
+
+  &__body {
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+
+    &--visible {
+      transform: translateX(0);
+    }
+  }
+
+  &__header {
+    margin-bottom: 18px;
+  }
+
+  &__iletişim {
+    margin-bottom: 25px;
+  }
+}
