@@ -1,4 +1,18 @@
 .nav {
+  @include onDesktop {
+    position: fixed;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+    left: 0;
+    right: 0;
+
+    z-index: 3;
+  }
+
+  &--static {
+    position: sticky;
+    top: 0;
+  }
+
   &__top {
     display: flex;
     justify-content: flex-end;
@@ -6,6 +20,10 @@
 
     &--in-menu {
       padding-right: 20px;
+    }
+
+    @include onDesktop {
+      display: none;
     }
   }
 
@@ -28,20 +46,37 @@
   }
 
   &__links {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+
+    color: $page-gray-color;
+    padding: 35px 0 35px 55px;
+    gap: 72px;
+
     display: none;
 
+    @include onDesktop {
+      display: flex;
+    }
+
     &--column {
-      font-size: 18px;
-      font-weight: 500;
-      line-height: 26px;
       color: #fff;
 
       display: flex;
-      padding-left: 30px;
+      padding: 0 0 0 30px;
   
       text-align: left;
       flex-direction: column;
       gap: 30px;
+    }
+  }
+
+  &__link {
+    @include onDesktop {
+      &:hover {
+        color: $page-pink-color;
+      }
     }
   }
 }

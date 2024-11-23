@@ -1,0 +1,73 @@
+.policy-terms {
+  font-size: 16px;
+  line-height: 24px;
+  color: $page-dark-blue-color;
+
+  text-align: left;
+
+  padding: 0 10px;
+  margin-bottom: 120px;
+
+  @include onDesktop {
+    margin-bottom: 90px;
+  }
+
+  &__wrapper {
+    padding-inline: 13px;;
+  }
+
+  &__section-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    text-transform: uppercase;
+    text-align: center;
+
+    margin: 25px 0;
+
+    @include onDesktop {
+      font-size: 24px;
+      line-height: 32px;
+
+      margin: 20px auto 15px;
+
+      max-width: 930px;
+
+    }
+
+    &--çerez {
+      margin-bottom: 55px;
+    }
+
+    &--gizlilik {
+      @include onDesktop {
+        margin: 29px auto 67px;
+      }
+    }
+  }
+
+  &__order-list {
+    list-style: decimal;
+    list-style-position: inside;
+  }
+
+  &__unorder-list {
+    list-style: disc;
+    list-style-position: inside;
+  }
+
+  &__item {
+    &::marker {
+      display: inline-block;
+    }
+  }
+
+  &__subtitle {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  &__underline-link {
+    text-decoration: underline;
+  }
+}

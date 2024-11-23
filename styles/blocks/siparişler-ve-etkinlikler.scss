@@ -1,18 +1,55 @@
 .siparişler-ve-etkinlikler {
-  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('../../images/siparişler-bg.avif');
+  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('../images/siparişler-bg.avif');
   background-size: 260%;
   background-position-x: 50%;
-  // background-position-y: 100%;
   background-repeat: no-repeat;
+
+  @include onDesktop {
+    background-image: url('../images/siparişler-bg.avif');
+    background-color: $page-light-pink-color;
+    background-size: contain;
+    background-position: right;
+  }
 
   &__inner {
     padding: 28px 7px;
+
+    @include onDesktop {
+      padding: 45px 0 75px;
+    }
+  }
+
+  &__text {
+    @include onDesktop {
+      max-width: 505px;
+
+      margin-bottom: 25px;
+    }
   }
 
   &__section-title {
     line-height: 32px;
 
-    margin-bottom: 30px;  
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      color: #000;
+
+      line-height: 58px;
+
+      margin-bottom: 23px;
+    }
+  }
+
+  &__section-about {
+    padding-inline: 13px;
+
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      padding: 0;
+      margin-bottom: 0;
+    }
   }
 
   &__siparişler {
@@ -26,6 +63,18 @@
     > *:not(:last-child) {
       min-height: 230px;
     }
+
+    @include onDesktop {
+      flex-direction: row;
+      max-width: 610px;
+      flex-wrap: wrap;
+
+      @include onDesktop {
+        > :last-child {
+          display: none;
+        }
+      }
+    }
   }
 
   &__item {
@@ -34,10 +83,14 @@
     flex-direction: column;
 
     &-title {
-      font-style: 24px;
+      font-size: 24px;
       font-weight: 700;
 
       margin-bottom: 10px;
+
+      @include onDesktop {
+        color: $page-dark-blue-color;
+      }
     }
 
     &-about {
@@ -46,12 +99,6 @@
 
       align-self: end;
     }
-  }
-
-  &__section-about {
-    padding-inline: 13px;
-
-    margin-bottom: 20px;
   }
 
   &__dessert-pic {

@@ -1,3 +1,9 @@
+@mixin onDesktop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
 @mixin figure($size) {
   width: $size;
   height: $size;
