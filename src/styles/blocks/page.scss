@@ -2,15 +2,20 @@
   font-family: "Edu AU VIC WA NT Hand", 'cursive';
   font-size: 20px;
   line-height: 28px;
-
   text-align: center;
+
+  overflow-x: hidden;
 
   background-color: #FDF9EB;
 
-  &__body {
-    &--with-menu {
-      overflow: hidden;
-    }
+  scroll-behavior: smooth;
+
+  @include onDesktop {
+    scroll-padding-top: 96px;
+  }
+
+  &--with-menu {
+    overflow: hidden;
   }
 
   &__menu {
@@ -28,9 +33,9 @@
 
   &__header {
     margin-bottom: 18px;
-  }
 
-  &__iletişim {
-    margin-bottom: 25px;
+    @include onDesktop {
+      margin-bottom: 72px;
+    }
   }
 }

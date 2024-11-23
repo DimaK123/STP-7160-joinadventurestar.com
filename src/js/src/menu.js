@@ -1,25 +1,28 @@
 const burgerButton = document.querySelector('.nav__burger-menu');
 const closeButton = document.querySelector('.nav__menu-close');
-const pageBody = document.querySelector('.page__body');
+const page = document.querySelector('.page');
 const pageMenu = document.querySelector('.page__menu');
 
 burgerButton.addEventListener('click', () => {
-  pageBody.classList.add('page__body--with-menu');
+  page.classList.add('page--with-menu');
   pageMenu.classList.add('page__menu--visible');
 });
 
 closeButton.addEventListener('click', () => {
-  pageBody.classList.remove('page__body--with-menu');
+  page.classList.remove('page--with-menu');
   pageMenu.classList.remove('page__menu--visible');
 });
 
-const cookiesBlock = document.querySelector('.accept-cookies');
-const acceptButton = document.querySelector('.accept-cookies__action-button');
+const menuLinks = document.querySelectorAll(".nav__link"); // Ссылки в меню
+const menu = document.querySelector(".page__menu"); // Меню
 
-acceptButton.addEventListener('click', () => {
-  cookiesBlock.classList.add('accept-cookies--fade-out');
-
-  setTimeout(() => {
-    cookiesBlock.style.display = 'none';
-  }, 500);
-});
+if (menuLinks && menu) {
+  menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      page.classList.remove("page--with-menu");
+      menu.classList.remove("page__menu--visible");
+    });
+  });
+} else {
+  console.error("Элементы не найдены! Проверьте классы.");
+}

@@ -1,16 +1,35 @@
 .iletişim {
+  padding-bottom: 25px;
+
+  @include onDesktop {
+    padding: 80px 0 55px;
+  }
+
   &__inner {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 60px;
+    }
+  }
+
+  &__picture {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
   }
 
   &__section-title {
     margin-bottom: 24px;
 
-    // @include onDesktop {
-    //   margin-bottom: 30px;
-    // }
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
   }
 
   &__form {
@@ -22,9 +41,10 @@
 
     margin-bottom: 15px;
 
-    // @include onDesktop {
-    //   margin-bottom: 45px;
-    // }
+    @include onDesktop {
+      min-width: 598px;
+      margin-bottom: 55px;
+    }
   }
 
   &__input {
@@ -87,9 +107,11 @@
     color: $page-dark-blue-color;
     line-height: 28px;
 
-    // @include onSmallDesktop {
-    //   gap: 5px;
-    // }
+    @include onDesktop {
+      max-width: 445px;
+      margin: 0 auto;
+      padding: 0;
+    }
   }
 
   &__contacts-top {
@@ -97,15 +119,15 @@
     flex-direction: column;
     gap: 20px;
 
-    // @include onSmallDesktop {
-    //   flex-direction: row;
-    //   gap: 40px;
-    // }
+    @include onDesktop {
+      flex-direction: row;
+      gap: 40px;
+    }
   }
 
   &__phone {
-    // @include onSmallDesktop {
-    //   order: -1;
-    // }
+    @include onDesktop {
+      order: -1;
+    }
   }
 }

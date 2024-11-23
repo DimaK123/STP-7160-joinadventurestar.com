@@ -2,20 +2,61 @@
   overflow-x: hidden;
   text-align: left;
 
+  &__inner {
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      gap: 250px;
+
+      margin-bottom: 65px;
+    }
+  }
+
+  &__text {
+    @include onDesktop {
+      max-width: 478px;
+
+      text-align: center;
+    }
+  }
+
   &__section-title {
     margin-bottom: 15px;
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
   }
 
   &__section-about {
     margin-bottom: 28px;
+
+    @include onDesktop {
+      margin-bottom: 0;
+
+      line-height: 22px;
+    }
   }
 
-  &__swiper {
-    margin-bottom: 40px;
+  &__swiper-wrapper {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 50px 0;
+
+      max-width: 500px;
+    }
   }
 
   &__swiper-slide {
     max-width: 210px;
+
+    @include onDesktop {
+      max-height: min-content;
+    }
   }
 
   &__dessert-pic {

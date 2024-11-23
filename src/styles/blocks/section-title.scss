@@ -4,4 +4,8 @@
   line-height: 58px;
 
   color: $page-dark-blue-color;
+
+  @include onDesktop {
+    font-size: 48px;
+  }
 }

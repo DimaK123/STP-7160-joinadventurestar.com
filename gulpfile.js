@@ -65,15 +65,6 @@ function sprite() {
     .pipe(dest('./src/images/icons'))
 }
 
-//Этот участок кода нужен для работы с файлами js
-// function scripts() {
-//   return src('src/js/main.js', { allowEmpty: true })
-//     .pipe(concat('main.min.js'))
-//     .pipe(uglify()) // компрессия итогового файла js
-//     .pipe(dest('src/js')) // указываем куда положить итоговый файл
-//     .pipe(browserSync.stream()) // обновление страницы после изменений
-// }
-
 const isNotMinified = (file) => !file.basename.endsWith('.min.js');
 
 function scripts() {
@@ -99,8 +90,6 @@ function watching() {
     }
   });
 
-  const debouncedStyles = debounce(() => styles(), 5000); // 5 секунд задержки
-  // watch(['src/styles/**/*.scss']).on('change', debouncedStyles);
   watch(['src/styles/**/*.scss'], styles);
 
   watch(['src/img'], images);
@@ -121,12 +110,14 @@ function building() {
   return src([
     'src/styles/main.min.css',
     'src/images/*.*', // при билдинге сразу указал рабочую папку, сейчас тестируем на img
+    'src/images/icons',
     '!src/images/src',
     // '!src/images/icons/*.svg', // на случай если будем использовать спрайты вместо svg, то сами файлики .svg нам будут не нужны
     // 'src/images/icons/sprite.svg', // на случай если будем использовать спрайты вместо svg
     'src/fonts/*.*',
     '!src/fonts/src',
     'src/js/*.min.js', // Этот участок кода нужен для работы с файлами js
+    '!src/js/src', // Этот участок кода нужен для работы с файлами js
     'src/**/*.html'
   ], { base: 'src', allowEmpty: true })
     .pipe(dest('dist'))
